@@ -3,26 +3,25 @@ package com.manuv.spritzalike;
 public class SimpleBestLetterAlgorithm implements BestLetterAlgorithm {
 
   @Override
-  public String getMostImportantChar(String word) {
+  public int getMostImportantCharPosition(String word) {
 
     if (word == null) {
       throw new IllegalArgumentException("input can't be null");
     } else {
       word = word.replaceAll(" ", "");
       int length = word.length();
-      String importantLetter;
+      int mostImportantCharPosition;
 
       if (length == 0) {
-        importantLetter = "";
+        mostImportantCharPosition = -1;
       } else if (length == 1) {
-        importantLetter = word;
+        mostImportantCharPosition = 0;
       } else {
-        int start = 1 + (calculateLetterBasedOnCharWeight(word.substring(1, length), length)) / 4;
-        int end = start + 1;
-        importantLetter = word.substring(start, end);
+        return 1 + (calculateLetterBasedOnCharWeight(word.substring(1, length), length)) / 4;
       }
-      System.out.println(importantLetter + "\t" + word);
-      return importantLetter;
+
+      System.out.println(mostImportantCharPosition + "\t" + word);
+      return mostImportantCharPosition;
     }
   }
 

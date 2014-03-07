@@ -11,29 +11,29 @@ public class SimpleBestLetterAlgorithmTest {
 
   @Test
   public void workTest(){
-    Assert.assertEquals("", algorithm.getMostImportantChar(" "));
-    Assert.assertEquals("", algorithm.getMostImportantChar("    "));
-    Assert.assertEquals("a", algorithm.getMostImportantChar("  a  "));
-    Assert.assertEquals("b", algorithm.getMostImportantChar("  a  b  "));
+    Assert.assertEquals(-1, algorithm.getMostImportantCharPosition(" "));
+    Assert.assertEquals(-1, algorithm.getMostImportantCharPosition("    "));
+    Assert.assertEquals(0, algorithm.getMostImportantCharPosition("  a  "));
+    Assert.assertEquals(1, algorithm.getMostImportantCharPosition("  a  b  "));
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void nullInpuTest(){
-    Assert.assertEquals("", algorithm.getMostImportantChar(null));
+    Assert.assertEquals(-1, algorithm.getMostImportantCharPosition(null));
   }
 
   @Test
   public void spritzLikeTest() {
-    Assert.assertEquals("f", algorithm.getMostImportantChar("if"));
-    Assert.assertEquals("n", algorithm.getMostImportantChar("and"));
-    Assert.assertEquals("i", algorithm.getMostImportantChar("with"));
-    Assert.assertEquals("w", algorithm.getMostImportantChar("powered"));
-    Assert.assertEquals("e", algorithm.getMostImportantChar("developers"));
-    Assert.assertEquals("h", algorithm.getMostImportantChar("technologies"));
-    Assert.assertEquals("v", algorithm.getMostImportantChar("having"));
-    Assert.assertEquals("r", algorithm.getMostImportantChar("front"));
-    Assert.assertEquals("n", algorithm.getMostImportantChar("minute"));
-    Assert.assertEquals("l", algorithm.getMostImportantChar("welcome"));
+    Assert.assertEquals(1, algorithm.getMostImportantCharPosition("if"));
+    Assert.assertEquals(1, algorithm.getMostImportantCharPosition("and"));
+    Assert.assertEquals(1, algorithm.getMostImportantCharPosition("with"));
+    Assert.assertEquals(2, algorithm.getMostImportantCharPosition("powered"));
+    Assert.assertEquals(3, algorithm.getMostImportantCharPosition("developers"));
+    Assert.assertEquals(3, algorithm.getMostImportantCharPosition("technologies"));
+    Assert.assertEquals(2, algorithm.getMostImportantCharPosition("having"));
+    Assert.assertEquals(1, algorithm.getMostImportantCharPosition("front"));
+    Assert.assertEquals(2, algorithm.getMostImportantCharPosition("minute"));
+    Assert.assertEquals(2, algorithm.getMostImportantCharPosition("welcome"));
   }
 
 }
