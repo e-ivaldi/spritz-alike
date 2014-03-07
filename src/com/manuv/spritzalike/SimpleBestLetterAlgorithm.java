@@ -17,7 +17,7 @@ public class SimpleBestLetterAlgorithm implements BestLetterAlgorithm {
       } else if (length == 1) {
         mostImportantCharPosition = 0;
       } else {
-        return 1 + (calculateLetterBasedOnCharWeight(word.substring(1, length), length)) / 4;
+        mostImportantCharPosition = 1 + (calculateLetterPositionBasedOnCharWeight(word.substring(1, length), length)) / 4;
       }
 
       System.out.println(mostImportantCharPosition + "\t" + word);
@@ -25,7 +25,7 @@ public class SimpleBestLetterAlgorithm implements BestLetterAlgorithm {
     }
   }
 
-  private int calculateLetterBasedOnCharWeight(String word, int length) {
+  private int calculateLetterPositionBasedOnCharWeight(String word, int length) {
     float weight = 0;
     for (Character c : word.toCharArray()) {
       if (isVowel(c)) {
