@@ -20,7 +20,7 @@ public class SimplePanel extends JPanel {
   private String[] words;
   private BestLetterAlgorithm algorithm;
   private AtomicInteger counter = new AtomicInteger(0);
-  private int wordsPerMinute = 600;
+  private int wordsPerMinute = 250;
 
   public SimplePanel(BestLetterAlgorithm algorithm) {
     this.algorithm = algorithm;
@@ -86,6 +86,10 @@ public class SimplePanel extends JPanel {
 
     }
     g2d.dispose();
+  }
+
+  public void setWordsPerMinute(int wordsPerMinute) {
+    this.wordsPerMinute = wordsPerMinute;
   }
 
 }
