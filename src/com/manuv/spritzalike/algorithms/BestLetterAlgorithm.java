@@ -1,4 +1,4 @@
-package com.manuv.spritzalike;
+package com.manuv.spritzalike.algorithms;
 
 public interface BestLetterAlgorithm {
 

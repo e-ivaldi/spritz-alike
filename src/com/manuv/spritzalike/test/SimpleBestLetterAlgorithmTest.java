@@ -2,8 +2,8 @@ package com.manuv.spritzalike.test;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.manuv.spritzalike.BestLetterAlgorithm;
-import com.manuv.spritzalike.SimpleBestLetterAlgorithm;
+import com.manuv.spritzalike.algorithms.BestLetterAlgorithm;
+import com.manuv.spritzalike.algorithms.SimpleBestLetterAlgorithm;
 
 public class SimpleBestLetterAlgorithmTest {
 
