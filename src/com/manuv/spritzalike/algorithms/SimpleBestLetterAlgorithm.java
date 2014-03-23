@@ -37,7 +37,7 @@ public class SimpleBestLetterAlgorithm implements BestLetterAlgorithm {
     return (int) Math.floor(weight);
   }
 
-  public boolean isVowel(Character c) {
+  private boolean isVowel(Character c) {
     return "aeiou".indexOf(Character.toLowerCase(c)) != -1;
   }
 
